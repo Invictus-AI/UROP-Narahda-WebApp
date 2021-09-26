@@ -1,8 +1,8 @@
-const express = require('express'),
-     http = require('http');
-
+const express = require('express');
+const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+
 const hostname = 'localhost';
 const port = 3000;
 
@@ -16,12 +16,13 @@ app.use((req, res, next) => {
 
 });
 app.use(morgan('dev'));
+
 app.use(bodyParser.json());
 
 app.all('/dishes', (req,res,next) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  next();
+  next(); //continue to look for other specs to match /dishes //
 });
 
 app.get('/dishes', (req,res,next) => {
@@ -62,6 +63,10 @@ app.delete('/dishes/:dishId', (req, res, next) => {
 
 app.use(express.static(__dirname + '/public'));
 const server = http.createServer(app);
+
+const dishRouter = require('./routes/dishRouter');
+
+app.use('/dishes', dishRouter);
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
