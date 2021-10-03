@@ -3,10 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-app.use(...);
-
-const db = require("./app/models");
-db.sequelize.sync();
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -25,8 +21,14 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
+require("./app/routes/tutorial.routes.js")(app);
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+
+const db = require("./app/models");
+db.sequelize.sync();
