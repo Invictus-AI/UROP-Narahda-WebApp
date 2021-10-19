@@ -1,7 +1,5 @@
 # UROP-Narahda-WebApp
 
-tutorial to learn how to use react and express together. may use MongoDB instead of PostgreSQL for now to follow the tutorial
-update as of 28/09: will not be following it, found another tutorial to utilist react + node + postgres :D
+ignore everything here the project is in the repo below instead
 
-
-https://github.com/narahda/final gonna try to implement it here instead
+https://github.com/narahda/final
