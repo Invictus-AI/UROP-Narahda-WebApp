@@ -1,5 +1,6 @@
 # final
 node + react + express + postgres
 
-ffmpeg.exe not included, download it yourself and add it to server/camera/videos folder. 
-npm run lazy to start backend
+ffmpeg.exe not included, download it  and add it to server/camera/videos folder. 
+nav to root and npm run go
+
